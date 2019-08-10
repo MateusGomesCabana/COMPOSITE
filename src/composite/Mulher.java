@@ -15,6 +15,10 @@ public class Mulher extends Pessoa {
 
     ArrayList<Pessoa> novasPessoas = new ArrayList<Pessoa>();
 
+    public ArrayList<Pessoa> getNovasPessoas() {
+        return novasPessoas;
+    }
+    
     public Mulher(String tipo) {
         this.tipo = tipo;
 
@@ -24,4 +28,15 @@ public class Mulher extends Pessoa {
     public void adicionarFilho(Pessoa novaPessoa) {
         this.novasPessoas.add(novaPessoa);
     }
+    
+    @Override
+    public Pessoa getPessoa(String nomeDaPessoa) throws Exception {
+        for (Pessoa pessoaTmp : novasPessoas) {
+            if (pessoaTmp.getTipo() == nomeDaPessoa) {
+                return pessoaTmp;
+            }
+        }
+        throw new Exception("Não existe este arquivo");
+    }
+
 }

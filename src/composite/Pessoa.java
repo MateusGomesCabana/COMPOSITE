@@ -13,7 +13,7 @@ public abstract class Pessoa {
 
     String tipo;
 
-    public void  printPessoa(String tipo) {
+    public void printPessoa(String tipo) {
         System.out.println(this.tipo);
     }
 
@@ -24,5 +24,10 @@ public abstract class Pessoa {
     public void adicionarFilho(Pessoa novaPessoa) throws Exception {
         throw new Exception("Não pode gerar uma nova pessoa: "
                 + this.tipo);
+    }
+
+    public Pessoa getPessoa(String nomeDapessoa) throws Exception {
+        throw new Exception(
+                this.tipo + " - Não é uma pasta");
     }
 }
