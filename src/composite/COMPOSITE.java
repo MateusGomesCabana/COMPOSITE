@@ -20,13 +20,13 @@ public class COMPOSITE {
         Pessoa filho = new Homens("filho");
 
         try {
-            pai.adicionarFilho(filho);;
+            pai.adicionarFilho(filho);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            mae.adicionarFilho(pai);
+            // mae.adicionarFilho(pai);
             mae.adicionarFilho(filho);
             mae.getTipo();
         } catch (Exception e) {
@@ -34,7 +34,6 @@ public class COMPOSITE {
         }
 
         try {
-
             mae.getPessoa(mae.getTipo()).getTipo();
 
         } catch (Exception e) {
