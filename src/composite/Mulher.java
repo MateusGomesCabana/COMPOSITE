@@ -13,14 +13,10 @@ import java.util.ArrayList;
  */
 public class Mulher extends Pessoa {
 
-    ArrayList<Pessoa> novasPessoas = new ArrayList<Pessoa>();
+    ArrayList<Pessoa> novasPessoas = new ArrayList<>();
 
-    public ArrayList<Pessoa> getNovasPessoas() {
-        return novasPessoas;
-    }
-    
-    public Mulher(String tipo) {
-        this.tipo = tipo;
+    public Mulher(String nome) {
+        this.nome = nome;
 
     }
 
@@ -28,15 +24,26 @@ public class Mulher extends Pessoa {
     public void adicionarFilho(Pessoa novaPessoa) {
         this.novasPessoas.add(novaPessoa);
     }
-    
+
+    public ArrayList<Pessoa> getNovasPessoas() {
+        return this.novasPessoas;
+    }
+
     @Override
     public Pessoa getPessoa(String nomeDaPessoa) throws Exception {
-        for (Pessoa pessoaTmp : novasPessoas) {
-            if (pessoaTmp.getTipo() == nomeDaPessoa) {
-                return pessoaTmp;
+        for (Pessoa pessoa : this.novasPessoas) {
+            if (pessoa.getName() == nomeDaPessoa) {
+                return pessoa;
             }
         }
         throw new Exception("Não existe este arquivo");
     }
 
+    @Override
+    public void printNomeDaPessoa() {
+        System.out.println(this.nome);
+        for (Pessoa pessoa : novasPessoas) {
+            pessoa.printNomeDaPessoa();
+        }
+    }
 }

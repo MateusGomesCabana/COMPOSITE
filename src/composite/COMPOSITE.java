@@ -26,16 +26,16 @@ public class COMPOSITE {
         }
 
         try {
-            // mae.adicionarFilho(pai);
+             mae.adicionarFilho(pai);
             mae.adicionarFilho(filho);
-            mae.getTipo();
+            mae.printNomeDaPessoa();
+           
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            mae.getPessoa(mae.getTipo()).getTipo();
-
+            mae.getPessoa(pai.getName()).printNomeDaPessoa();
         } catch (Exception e) {
             e.printStackTrace();
         }

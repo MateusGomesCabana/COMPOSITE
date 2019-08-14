@@ -11,23 +11,26 @@ package composite;
  */
 public abstract class Pessoa {
 
-    String tipo;
+    String nome;
 
-    public void printPessoa(String tipo) {
-        System.out.println(this.tipo);
+    public void printPessoa(String nome) {
+        System.out.println(this.nome);
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getName() {
+        return nome;
     }
-
+    
+    public void printNomeDaPessoa() {
+        System.out.println(this.nome);
+    }
+ 
+    
     public void adicionarFilho(Pessoa novaPessoa) throws Exception {
-        throw new Exception("Não pode gerar uma nova pessoa: "
-                + this.tipo);
+        throw new Exception("Não pode gerar uma nova pessoa: " + this.nome);
     }
 
     public Pessoa getPessoa(String nomeDapessoa) throws Exception {
-        throw new Exception(
-                this.tipo + " - Não é uma pasta");
+        throw new Exception( this.nome + " não existe");
     }
 }

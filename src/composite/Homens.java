@@ -11,8 +11,8 @@ package composite;
  */
 public class Homens extends Pessoa {
 
-    public Homens(String tipo) {
-        this.tipo = tipo;
+    public Homens(String nome) {
+        this.nome = nome;
     }
 
 }
