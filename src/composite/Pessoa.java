@@ -27,7 +27,7 @@ public abstract class Pessoa {
  
     
     public void adicionarFilho(Pessoa novaPessoa) throws Exception {
-        throw new Exception("Não pode gerar uma nova pessoa: " + this.nome);
+        throw new Exception( this.nome +" Não pode gerar uma nova pessoa ");
     }
 
     public Pessoa getPessoa(String nomeDapessoa) throws Exception {
